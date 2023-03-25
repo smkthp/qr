@@ -43,7 +43,7 @@ module.exports = {
         preset: ['default', { discardComments: { removeAll: true } }]
       }
     }),
-    new CopyWebpackPlugin([{ from: 'images/', to: 'images' }, 'decoder.js', 'manifest.json', 'CNAME'], {
+    new CopyWebpackPlugin([{ from: 'images/', to: 'images' }, 'decoder.js', 'manifest.json'], {
       context: './app'
     }),
     new SitemapPlugin('https://qrcodescan.in', ['/'])

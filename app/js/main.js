@@ -100,6 +100,15 @@ window.addEventListener('DOMContentLoaded', () => {
       dialogOverlayElement.classList.remove('app__dialog--hide');
       const frame = document.querySelector('#frame');
       // if (forSelectedPhotos && frame) frame.remove();
+
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const from = urlParams.get('redirect_uri');
+
+      if (from !== '') {
+        const redirecttarget = from + '?code=' + encodeURI(result);
+        window.location = redirecttarget;
+      }
     }, forSelectedPhotos);
   }
 
