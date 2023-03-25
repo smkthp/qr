@@ -105,7 +105,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const urlParams = new URLSearchParams(queryString);
       const from = urlParams.get('redirect_uri');
 
-      if (from !== '') {
+      if (from !== null) {
         const redirecttarget = from + '?code=' + encodeURI(result);
         window.location = redirecttarget;
       }
